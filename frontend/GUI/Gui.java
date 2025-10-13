@@ -28,7 +28,7 @@ class GuiFrame extends JFrame {
         setSize(900, 890);
         setLayout(null);
         setResizable(false);
-        getContentPane().setBackground(new Color(30, 30, 30)); // Dark background
+        getContentPane().setBackground(new Color(30, 30, 30)); 
 
         // Heading
         heading = new JLabel("Campus Navigator", SwingConstants.CENTER);
