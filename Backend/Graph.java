@@ -32,6 +32,18 @@ public class Graph {
         }
     }
     
+    public void addEdge(String startName, String endName, double distance) {
+        Node start = findNode(startName);
+        Node end = findNode(endName);
+        
+        if (start != null && end != null) {
+            Edge edge = new Edge(start, end, distance);
+            edges.add(edge);
+            adjacencyList.get(start).add(edge);
+            adjacencyList.get(end).add(edge);
+        }
+    }
+    
     public Node findNode(String name) {
         for (Node node : nodes) {
             if (node.getName().equals(name)) {
@@ -61,7 +73,7 @@ public class Graph {
     public List<Edge> getAdjacentEdges(Node node) {
         return adjacencyList.getOrDefault(node, new ArrayList<>());
     }
-    
+      
     public void initializeCampusMap() {
         // Add campus locations
         addNode("Gargi Girl's Hostel", 150, 100);
@@ -87,7 +99,7 @@ public class Graph {
         addNode("ATM", 700, 250);
         
         // Create edges between locations
-        addEdge("Gargi Girl's Hostel", "Tagore Boy's Hostel");
+        addEdge("Gargi Girl's Hostel", "Tagore Boy's Hostel",80);
         addEdge("Cafeteria", "Admin Block");
         addEdge("Gargi Girl's Hostel", "Lab Building");
         addEdge("Cafeteria", "Auditorium");

@@ -9,6 +9,12 @@ public class Edge {
         this.distance = start.distanceTo(end);
     }
     
+    public Edge(Node start, Node end, double customDistance) {
+        this.start = start;
+        this.end = end;
+        this.distance = customDistance;
+    }
+    
     public Node getStart() {
         return start;
     }

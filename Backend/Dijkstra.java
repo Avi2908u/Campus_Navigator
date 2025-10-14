@@ -40,6 +40,7 @@ public class Dijkstra {
         PriorityQueue<NodeDistance> pq = new PriorityQueue<>();
         Set<Node> visited = new HashSet<>();
         
+        // Initialize distances
         for (Node node : graph.getNodes()) {
             distances.put(node, Double.POSITIVE_INFINITY);
         }
@@ -61,6 +62,7 @@ public class Dijkstra {
                 break;
             }
             
+            // Check all adjacent edges
             for (Edge edge : graph.getAdjacentEdges(currentNode)) {
                 Node neighbor = edge.getOtherNode(currentNode);
                 
@@ -78,6 +80,7 @@ public class Dijkstra {
             }
         }
         
+        // Reconstruct path
         List<Node> path = reconstructPath(previous, start, end);
         double totalDistance = distances.get(end);
         List<Edge> pathEdges = getPathEdges(graph, path);
