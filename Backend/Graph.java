@@ -75,32 +75,50 @@ public class Graph {
     }
 
     public void initializeCampusMap() {
-        // Add campus locations
-        addNode("Gargi Girl's Hostel", 150, 100);
-        addNode("Canteen", 350, 150);
-        addNode("Tagore Boy's Hostel", 550, 100);
-        addNode("B5", 350, 350);
-        addNode("Football Ground", 350, 350);
-        addNode("Mansarowar", 350, 350);
-        addNode("Sports Office", 550, 300);
-        addNode("Basketball Court", 150, 500);
-        addNode("Hotspot", 350, 500);
-        addNode("B2", 350, 500);
-        addNode("Central Library", 550, 500);
-        addNode("B1", 650, 400);
-        addNode("Health Centre", 750, 300);
-        addNode("Volleyball Court", 250, 600);
-        addNode("Admin Block", 450, 250);
-        addNode("Admin Ground", 450, 250);
-        addNode("Parking", 650, 150);
-        addNode("B3", 450, 450);
-        addNode("B6", 450, 450);
-        addNode("B4", 550, 350);
-        addNode("Choti Canteen", 250, 200);
-        addNode("Lawn Tennis Court", 350, 600);
-        addNode("Cricket Ground", 150, 650);
-        addNode("Main Gate", 650, 250);
-        addNode("ATM", 700, 250);
+        // Add campus locations with coordinates matching the map layout
+        // Top area - Hostels (well separated)
+        addNode("Gargi Girl's Hostel", 100, 80);
+        addNode("Tagore Boy's Hostel", 350, 80);
+        
+        // Upper-middle area - B5 Workshop
+        addNode("B5", 240, 180);
+        
+        // Left side - Canteen area (spread vertically)
+        addNode("Mansarowar", 150, 300);
+        addNode("Canteen", 180, 350);
+        
+        // Central area - Parking
+        addNode("Parking", 280, 360);
+        
+        // Central-right area - Buildings (more horizontal spacing)
+        addNode("Park", 360, 290);
+        addNode("B3", 450, 280);
+        addNode("Choti Canteen", 550, 290);
+        
+        // Middle row (spread out more)
+        addNode("Central Library", 220, 420);
+        addNode("B6", 300, 410);
+        addNode("Basketball Court", 380, 420);
+        addNode("B4", 470, 400);
+        
+        // Lower-middle area (better spacing)
+        addNode("B2", 260, 470);
+        addNode("Volleyball Court", 320, 490);
+        addNode("Sports Office", 400, 500);
+        addNode("Hotspot", 520, 480);
+        
+        // Right side facilities (pushed further right)
+        addNode("Lawn Tennis Court", 620, 360);
+        addNode("Cricket Ground", 680, 460);
+        
+        // Bottom area (more vertical spacing)
+        addNode("Health Centre", 440, 560);
+        addNode("B1", 510, 550);
+        addNode("Admin Block", 480, 640);
+        
+        // Far right
+        addNode("Main Gate", 600, 650);
+        addNode("ATM", 650, 660);
 
         // Create edges between locations
         addEdge("Gargi Girl's Hostel", "Tagore Boy's Hostel", 80);
